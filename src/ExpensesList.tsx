@@ -11,14 +11,12 @@ export const ExpensesList: React.FC = () => {
   useEffect(() => {
     dataStore.get().then((e) => {
       let docs = e.documents.filter((e) => {
-        console.log(e.fields);
         return (
           e.fields.type?.stringValue !== undefined &&
           e.fields.type?.stringValue === "expenseEntry"
         );
       });
       setList(docs);
-      console.log(docs, list);
     });
   }, []);
 

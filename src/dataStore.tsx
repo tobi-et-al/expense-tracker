@@ -17,17 +17,12 @@ export const dataStore = {
     }
   },
   create: function () {
-    console.log("create");
     axios
       .post(
         "https://firestore.googleapis.com/v1beta1/projects/expense-list-f8587/databases/(default)/documents/list?&key=BJp_eHaiYahOy_pHrUpQa7alaKZcS1YhNFhSXYM9aoZmJIcA5of6b8st0bfJ0dk-7igAzTDEauA76RdlOqQnusY",
         { fields: { Field2: { integerValue: 1212 } } }
       )
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+      .then(function (response) {})
+      .catch(function (error) {});
   }
 };

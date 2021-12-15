@@ -8,7 +8,6 @@ export const ExpensesForm: React.FC = () => {
   const handlesubmit = (e: any) => {
     e.preventDefault();
     let expensesForm = state.form["expensesForm"];
-    console.log(expensesForm, dataStore.create());
   };
 
   return (

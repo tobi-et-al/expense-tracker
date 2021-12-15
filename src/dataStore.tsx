@@ -8,12 +8,12 @@ export const dataStore = {
       );
       if (res.status === 200) {
         // test for status you want, etc
-        console.log(res.status);
+        // console.log(res.status);
       }
       // Don't forget to return something
       return res.data;
     } catch (err) {
-      console.error(err);
+      // console.error(err);
     }
   },
   create: function () {

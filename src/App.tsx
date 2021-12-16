@@ -9,13 +9,12 @@ import "./styles.css";
 import { ExpensesForm } from "./ExpensesForm";
 import { ExpensesList } from "./ExpensesList";
 
-const axios = require("axios").default;
-
 export type AppContextType = {};
 
 export const defaultContextValue = {
   config: {
-    title: "Expense Tracker"
+    title: "Expense Tracker",
+    isUpdated: true
   }
 };
 

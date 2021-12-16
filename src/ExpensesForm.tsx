@@ -1,13 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FormInput } from "../src/FormInput";
-import { AppContext, dataStore } from "./App";
+import { AppContext } from "./App";
+import { dataStore } from "./dataStore";
 
 export const ExpensesForm: React.FC = () => {
   const { state, setState } = useContext(AppContext);
 
   const handlesubmit = (e: any) => {
     e.preventDefault();
-    let expensesForm = state.form["expensesForm"];
+    let { name, amount, date } = state.form["expensesForm"];
+    // dataStore.create(name, amount, date);
+    state.config.isUpdated = true;
+    setState(state);
+    console.log("handlesubmit", state.config.isUpdated);
   };
 
   return (
@@ -26,13 +31,11 @@ export const ExpensesForm: React.FC = () => {
           ></FormInput>
           <FormInput
             name="amount"
-            type="number"
             formName={"expensesForm"}
             required={false}
           ></FormInput>
           <FormInput
             name="date"
-            type="date"
             formName={"expensesForm"}
             required={false}
           ></FormInput>
